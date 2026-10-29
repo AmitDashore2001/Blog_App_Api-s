@@ -18,7 +18,7 @@ public class CategoryController {
     }
     @GetMapping("/{id}")
     public CategoryDto findById(@PathVariable long id){
-        return this.categoryService.getCategoryById(id > 1 ? id - 1 : id);
+        return this.categoryService.getCategoryById(id);
     }
 
     @GetMapping("/")
