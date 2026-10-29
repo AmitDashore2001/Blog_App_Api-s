@@ -29,6 +29,7 @@ public class CategoryServiceImpl implements CategoryService{
     public CategoryDto getCategoryById(long id) {
         Category category= this.categoryDao.findById(id).orElseThrow(()-> new ResourceNotFoundException("Category Id is not found"));
         CategoryDto categoryDto=this.categoryToDto(category);
+        categoryDto.setCategoryTitle(category.getCategoryTitle());
         return categoryDto;
     }
     @Override
